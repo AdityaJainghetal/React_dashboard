@@ -22,41 +22,56 @@ const Sidebar = ({ sidebarToggle }) => {
         <li className="mb-2 rounded hover:shadow hover:bg-blue-500 py-5 px-2 flex items-center ">
           <FaHome className="w-6 h-6 mr-2" />
           <Link to="home">
-         Home</Link>
+          <a href="#">
+         Home </a>
+         </Link>
         </li>
         <li className="mb-2 rounded hover:shadow hover:bg-blue-500 py-5 px-2 flex items-center">
           <FaDisplay className="w-6 h-6 mr-2" />
-          
-          Display
+          <Link to="display">
+          <a href="#">
+          Display</a>
+          </Link>
         
         </li>
         <li className="mb-2 rounded hover:shadow hover:bg-blue-500 py-5 px-2 flex items-center">
           <MdOutlineBrowserUpdated className="w-6 h-6 mr-2" />
           
-         Update
+          <Link to="insert">
+          <a href="#">
+          Add passanger</a>
+          </Link>
         
         </li>
         <li className="mb-2 rounded hover:shadow hover:bg-blue-500 py-5 px-2 flex items-center">
           <FaTrashAlt className="w-6 h-6 mr-2" />
         
-         Deleted
+          <Link to="delete">
+          <a href="#">
+          Deleted </a>
+          </Link>
        
         </li>
         <li className="mb-2 rounded hover:shadow hover:bg-blue-500 py-5 px-2 flex items-center">
           <FaSearch className="w-6 h-6 mr-2" />
-         
+         <Link to="search">
+         <a href="#">
           Search
-        
+          </a>
+          </Link>
         </li>
         <li className="mb-2 rounded hover:shadow hover:bg-blue-500 py-5 px-2 flex items-center">
           <RiLogoutBoxFill className="w-6 h-6 mr-2" />
-         
+         <Link to="Logout">
+         <a href="#">
           Logout
-       
+          </a>
+          </Link>
         </li>
       </ul>
+      <div>
      <Outlet/>
-     
+     </div>     
     </div>
      
   );
