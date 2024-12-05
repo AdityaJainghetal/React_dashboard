@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaBars, FaBell, FaSearch, FaUserCircle } from "react-icons/fa";
 
+
 const Navbar = ({sidebarToggle, setSidebarToggle}) => {
   return (
     <div className='bg-gray-800 px-4 py-4 flex justify-between'>
@@ -37,6 +38,8 @@ const Navbar = ({sidebarToggle, setSidebarToggle}) => {
 
 
         </div>
+
+       
     </div>
   )
 }
