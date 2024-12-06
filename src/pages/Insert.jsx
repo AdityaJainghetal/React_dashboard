@@ -1,12 +1,73 @@
-import React from 'react'
+import React from 'react';
+import { useState } from 'react';
+// import axios from 'axios';
+
+
 
 const Insert = () => {
+  const [input, setInput] = useState({});
+  
+  const handleInput=(e)=>{
+    let name= e.target.name;
+    let value=e.target.value;
+    setInput(values=>({...values,[name]:value}));
+    console.log(input);
+  }  
+  
+
+  const handleSubmit=(e)=>{
+    let api="http://localhost:3000/books";
+    axios.post(api,input).then((res)=>{
+        message.success("Book Inserted Successfully");
+    });
+  }
+  
   return (
-    <div style={{paddingLeft:"300px"}}>
-    <h1>HOme page Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ex neque illum in sequi officiis possimus rem placeat eum recusandae nam dolor qui architecto, molestiae odio id autem atque. Dolor asperiores laudantium quod earum assumenda voluptates, officiis vel maxime sunt voluptatum illo! Rerum facilis earum officiis minima mollitia beatae ut.
-    </h1>
+    <>
+    <div style={{display:"flex", justifyContent:"center", alignItems:"center",paddingLeft:"100px", paddingTop:"50px"}} >
+   
+  
+      <div style={{alignItems:"center", border:"2px solid black", borderRadius:"10px", alignContent:"center", padding:"40px"}} className='bg-gray-600 w-3/5  '>
+        
+      <div style={{display:"flex", justifyContent:"center", alignItems:"center", flexDirection:"column"}}>
+      <label style={{color:"black", fontWeight:"500", fontSize:"20px", fontFamily:"sans-serif"}} htmlFor="Enter your name">Enter your name</label>
+      <input type="text" style={{width:"50%"}} name="name" value={input.name} onChange={handleInput} />
+      </div>
+      
+        <br />
+
+        <div style={{display:"flex", justifyContent:"center", alignItems:"center", flexDirection:"column"}}>
+      <label style={{color:"black", fontWeight:"500", fontSize:"20px", fontFamily:"sans-serif"}} htmlFor="Enter your price">Enter your price</label>
+      <input type="text"  style={{width:"50%"}} name="price" value={input.price} onChange={handleInput} />
+      </div>
+      
+<br />
+
+<div style={{display:"flex", justifyContent:"center", alignItems:"center", flexDirection:"column"}}>
+      <label  style={{color:"black", fontWeight:"500", fontSize:"20px", fontFamily:"sans-serif"}} htmlFor="Enter your author">Enter your author</label>
+      <input type="text"  style={{width:"50%"}} name="author_name" value={input.author_name} onChange={handleInput} />
+      </div>
+    
+<br />
+      <div style={{display:"flex", justifyContent:"center", alignItems:"center", flexDirection:"column"}}>
+      <label  style={{color:"black", fontWeight:"500", fontSize:"20px", fontFamily:"sans-serif"}} htmlFor="Enter your year">Enter your year</label>
+      <input type="text"  style={{width:"50%"}}  name="publish_year" value={input.publish_year} onChange={handleInput} />
+      </div>
+      <br />
+      <br />
+      <div style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
+      <button style={{border:"2px solid black", borderRadius:"5px", padding:"5px", backgroundColor:"darkgray"}}  onClick={handleSubmit}>Submit</button>
+      </div>
+
+      </div>
+   
+   
+   
+   
+   
 
     </div>
+    </>
   )
 }
 
