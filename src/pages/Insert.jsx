@@ -31,27 +31,27 @@ const Insert = () => {
         
       <div style={{display:"flex", justifyContent:"center", alignItems:"center", flexDirection:"column"}}>
       <label style={{color:"black", fontWeight:"500", fontSize:"20px", fontFamily:"sans-serif"}} htmlFor="Enter your name">Enter your name</label>
-      <input type="text" style={{width:"50%"}} name="name" value={input.name} onChange={handleInput} />
+      <input type="text" style={{width:"50%",borderRadius:"5px"}} name="name" value={input.name} onChange={handleInput} />
       </div>
       
         <br />
 
         <div style={{display:"flex", justifyContent:"center", alignItems:"center", flexDirection:"column"}}>
       <label style={{color:"black", fontWeight:"500", fontSize:"20px", fontFamily:"sans-serif"}} htmlFor="Enter your price">Enter your price</label>
-      <input type="text"  style={{width:"50%"}} name="price" value={input.price} onChange={handleInput} />
+      <input type="text"  style={{width:"50%", borderRadius:"5px"}} name="price" value={input.price} onChange={handleInput} />
       </div>
       
 <br />
 
 <div style={{display:"flex", justifyContent:"center", alignItems:"center", flexDirection:"column"}}>
       <label  style={{color:"black", fontWeight:"500", fontSize:"20px", fontFamily:"sans-serif"}} htmlFor="Enter your author">Enter your author</label>
-      <input type="text"  style={{width:"50%"}} name="author_name" value={input.author_name} onChange={handleInput} />
+      <input type="text"  style={{width:"50%",borderRadius:"5px"}} name="author_name" value={input.author_name} onChange={handleInput} />
       </div>
     
 <br />
       <div style={{display:"flex", justifyContent:"center", alignItems:"center", flexDirection:"column"}}>
       <label  style={{color:"black", fontWeight:"500", fontSize:"20px", fontFamily:"sans-serif"}} htmlFor="Enter your year">Enter your year</label>
-      <input type="text"  style={{width:"50%"}}  name="publish_year" value={input.publish_year} onChange={handleInput} />
+      <input type="text"  style={{width:"50%",borderRadius:"5px"}}  name="publish_year" value={input.publish_year} onChange={handleInput} />
       </div>
       <br />
       <br />
