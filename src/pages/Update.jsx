@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 import axios from 'axios'
-// import image from "../image/download.jpeg"
+import { RiEdit2Fill } from "react-icons/ri";
 
+import { useNavigate } from 'react-router-dom';
 
-const Display = () => {
+const Update = () => {
   const [mydata , setMydata] = useState([]);
+  const navigate=useNavigate()
 
   const loaddata=()=>{
     let api= "http://localhost:3000/books";
@@ -13,6 +15,11 @@ const Display = () => {
       setMydata(res.data);
     })
   }
+
+  const myEdit=(id)=>{
+    navigate(`/edit/${id}`)
+  }
+
 
   useEffect(()=>{
     loaddata()
@@ -31,6 +38,15 @@ const Display = () => {
         <td>{key.price}</td>
         <td>{key.author_name}</td>
         <td>{key.publish_year}</td>
+        <td>
+
+          
+            <a onClick={()=>myEdit(key.id)}>
+        <RiEdit2Fill />
+        
+        </a>
+
+        </td>
       </tr>
       
       </>
@@ -49,6 +65,7 @@ const Display = () => {
         <th className='text-2xl' >Price</th>
         <th className='text-2xl' >author_name</th>
         <th className='text-2xl' >publish_year</th>
+        <th className='text-2xl' > Edit</th>
       </tr>
       {ans}
     </table>
@@ -61,4 +78,4 @@ const Display = () => {
   
 }
 
-export default Display;
+export default Update;

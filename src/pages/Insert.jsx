@@ -1,12 +1,18 @@
 import React from 'react';
 import { useState } from 'react';
-// import axios from 'axios';
+import axios from 'axios';
+import { message } from 'antd';
+import { useNavigate } from 'react-router-dom';
+// import Display from './Display';
 
 
 
 const Insert = () => {
   const [input, setInput] = useState({});
-  
+  const navigate = useNavigate()
+
+
+
   const handleInput=(e)=>{
     let name= e.target.name;
     let value=e.target.value;
@@ -18,8 +24,15 @@ const Insert = () => {
   const handleSubmit=(e)=>{
     let api="http://localhost:3000/books";
     axios.post(api,input).then((res)=>{
-        message.success("Book Inserted Successfully");
-    });
+
+      if (!input.name || !input.price || !input.author_name || !input.publish_year) {
+        message.error("All fields are required!");
+        return;
+      }
+  
+        message.success("Book Inserted Successfully")
+        navigate("/Display")
+      });
   }
   
   return (
@@ -56,7 +69,10 @@ const Insert = () => {
       <br />
       <br />
       <div style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
-      <button style={{border:"2px solid black", borderRadius:"5px", padding:"5px", backgroundColor:"darkgray"}}  onClick={handleSubmit}>Submit</button>
+      <button style={{border:"2px solid black", borderRadius:"5px", padding:"5px", backgroundColor:"darkgray"}}  onClick={handleSubmit} 
+      
+      
+      >Submit</button>
       </div>
 
       </div>

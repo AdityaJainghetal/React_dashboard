@@ -6,6 +6,7 @@ import { FaSearch } from "react-icons/fa";
 import { RiLogoutBoxFill } from "react-icons/ri";
 import { FaTrashAlt } from "react-icons/fa"; 
 import { Link, Outlet } from "react-router-dom";
+import { MdEditDocument } from "react-icons/md";
 
 
 
@@ -60,9 +61,21 @@ const Sidebar = ({ sidebarToggle }) => {
           </a>
           </Link>
         </li>
+
+        <li className="mb-2 rounded hover:shadow hover:bg-blue-500 py-5 px-2 flex items-center">
+          <MdEditDocument  className="w-6 h-6 mr-2" />
+         <Link to="Update">
+         <a href="#">
+          Update
+          </a>
+          </Link>
+        </li>
+
+
+
         <li className="mb-2 rounded hover:shadow hover:bg-blue-500 py-5 px-2 flex items-center">
           <RiLogoutBoxFill className="w-6 h-6 mr-2" />
-         <Link to="Logout">
+         <Link to="Login">
          <a href="#">
           Logout
           </a>
